@@ -11,19 +11,19 @@ export function meta({}: Route.MetaArgs) {
 
 export async function clientLoader() {
 
-  // //-------------------------------------------------------
-  // // 로그인 시도
-  // //-------------------------------------------------------
-  // const { error } = await supabase.auth.signInWithPassword({
-  //     email: "gdhong@test.com",
-  //     password: "pass123",
-  //   })
+  //-------------------------------------------------------
+  // 로그인 시도
+  //-------------------------------------------------------
+  const { error } = await supabase.auth.signInWithPassword({
+      email: "gdhong@test.com",
+      password: "pass123",
+    })
   
-  // if (error) {
-  //   alert(`로그인 실패: ${error.message}`)
-  //   console.log("로그인 실패", error.message)
-  //   return { songs: [], user: null }
-  // }
+  if (error) {
+    alert(`로그인 실패: ${error.message}`)
+    console.log("로그인 실패", error.message)
+    return { songs: [], user: null }
+  }
 
   //-------------------------------------------------------
   // 세션 확인
